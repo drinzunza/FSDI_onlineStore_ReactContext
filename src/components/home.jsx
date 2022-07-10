@@ -4,18 +4,12 @@ const Home = () => {
   return (
     <div className="home-page">
       <h1>Fresh food always</h1>
+      <hr />
       <Link className="btn btn-primary" to="/catalog">
-        Check our amazing catalog!
+        Check our amazing catalog!!
       </Link>
     </div>
   );
 };
 
 export default Home;
-
-/*
-    - create Cart page
-    - display a simple h1 for now
-    - use the search button to navigate to it (text should be: View cart)
-    - remove the search box from the navBar
-*/
