@@ -19,7 +19,7 @@ const Catalog = () => {
 
   return (
     <div className="catalog">
-      <h2>This is our Amazing Catalog!!</h2>
+      <h2>Only the best products!</h2>
       <h3>We have # products!</h3>
 
       <div className="products-container">

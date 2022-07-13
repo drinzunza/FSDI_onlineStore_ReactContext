@@ -1,3 +1,11 @@
-.catalog h2{
-    color:chocolate;
+.catalog {
+    padding-top: 10px;
+}
+
+.catalog h2 {
+    color: rgb(70, 75, 81);
+}
+
+.catalog h3 {
+    font-size: 16px;
 }
