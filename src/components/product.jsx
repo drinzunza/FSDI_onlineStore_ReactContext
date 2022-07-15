@@ -1,9 +1,11 @@
 import "./product.css";
 import QuantityPicker from "./quantityPicker";
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import StoreContext from './../context/storeContext';
 
 const Product = (props) => {
   let [quantity, setQuantity] = useState(1);
+  let globalAddProd = useContext(StoreContext).addProduct;
 
   const quantityChange = (val) => {
     setQuantity(val);
@@ -14,6 +16,11 @@ const Product = (props) => {
     return total.toFixed(2);
   };
 
+  const handleAdd = () => {
+    console.log('add button pressed');
+    globalAddProd(props.data); // call the global fn
+  };
+
   return (
     <div className="product">
       <img src={'/img/' + props.data.image} alt="" />
@@ -21,7 +28,9 @@ const Product = (props) => {
       <label>Price: ${props.data.price.toFixed(2)}</label>
       <label>Total: ${getTotal()}</label>
       <QuantityPicker onChange={quantityChange}></QuantityPicker>
-      <button className="btn btn-primary">Add</button>
+      <button onClick={handleAdd} className="btn btn-primary">
+        Add
+      </button>
     </div>
   );
 };
